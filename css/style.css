@@ -40,6 +40,9 @@ main{
 	background-color: white;
 }
 /*session info*/
+label{
+	font-family: 'Berkshire Swash', cursive;
+}
 .click-count{
     width: 15em;
     height: 150px;
@@ -48,6 +51,7 @@ main{
     position: relative;
     margin: 2em 2em 2em 4em;
     display: inline-block;
+    top: -12px;
 }
 .click-count label{
 	font-size: 3em;
@@ -61,7 +65,26 @@ main{
 	margin-top: 0.5em;
 	color: #6b5a3f;
 }
-label{
-	font-family: 'Berkshire Swash', cursive;
+.current-cash{
+	width: 20em;
+	height: 150px;
+	text-align: center;
+	color:grey;
+	position: relative;
+	margin: 2em 2em 2em 4em;
+	display: inline-block;
+	right: -3em;
+}
+.current-cash label{
+	font-size: 3em;
+	border-bottom: 1px solid #f1c40f;
+	color: #f39c12;
+}
+.current-cash a{
+	font-size:3em;
+	font-family: 'Special Elite', cursive;
+	display: inline-block;
+	margin-top: 0.5em;
+	color: #6b5a3f;
 }
 /*end session info*/
