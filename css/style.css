@@ -87,13 +87,13 @@ label{
 	color: #086b08;
 }
 .click-profit{
-    width: 15em;
+    width: 18em;
     height: 150px;
     text-align: center;
     color:grey;
     position: absolute;
     display: inline-block;
-    left: 2em;
+    left: 1em;
     bottom: 0em;
     border-top: none;
 }
@@ -103,10 +103,14 @@ label{
 	color: #f39c12;
 }
 .click-profit a{
-	font-size: 2EM;
+	font-size: 2em;
 	font-family: 'Bungee', cursive;
 	display: inline-block;
 	margin-top: 0.5em;
-	color: #6b5a3f;
+	color: #086b08;
+}
+.click-profit a:before {
+ 	color: #f39c12;
+ 	content: "BTC : ";
 }
 /*end session info*/

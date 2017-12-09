@@ -30,7 +30,7 @@ function handleCashStorage() {
     //handles memeory for profit from click history
     game.stats.cashFromClicks = parseFloat((game.stats.cashFromClicks).toFixed(2));
     game.stats.cashFromClicks = storageHandler(game.stats.cashFromClicks, "cashFromClicks");
-    clickProfitLabel.innerText = "BTC "+game.stats.cashFromClicks;
+    clickProfitLabel.innerText = game.stats.cashFromClicks;
 }
 
 function handleClickStorage() {

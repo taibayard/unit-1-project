@@ -23,9 +23,9 @@ var coinClick = function() {
 }
 
 function addEvents() {
-    coin.addEventListener("click", coinClick);
     coin.addEventListener("mousedown", function() {
         this.style.setProperty("transform", "scale(1.1)");
+        coinClick();
     })
     coin.addEventListener("mouseup", function() {
         this.style.setProperty("transform", "scale(1)");
