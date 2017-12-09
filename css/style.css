@@ -48,41 +48,63 @@ label{
     height: 150px;
     text-align: center;
     color:grey;
-    position: relative;
-    margin: 2em 2em 2em 4em;
+    position: absolute;
     display: inline-block;
-    top: -12px;
+    left: 2em;
+    bottom: 11em;
+    border-top: none;
 }
 .click-count label{
-	font-size: 3em;
+	font-size: 2.7em;
 	border-bottom: 1px solid #f1c40f;
 	color: #f39c12;
 }
 .click-count a{
 	font-size:3em;
-	font-family: 'Special Elite', cursive;
+	font-family: 'Bungee', cursive;
 	display: inline-block;
 	margin-top: 0.5em;
 	color: #6b5a3f;
 }
 .current-cash{
-	width: 20em;
-	height: 150px;
+	width: 100%;
+	height: 124px;
 	text-align: center;
-	color:grey;
 	position: relative;
-	margin: 2em 2em 2em 4em;
 	display: inline-block;
-	right: -3em;
+	margin-top: 2em;
+	border-bottom: 1px solid #f39c12;
 }
 .current-cash label{
-	font-size: 3em;
+	font-size: 4.3em;
+	color: #f39c12;
+	font-family: 'Bungee', cursive;
+}
+.current-cash a{
+	font-size: 4em;
+	font-family: 'Bungee', cursive;
+	display: inline-block;
+	color: #086b08;
+}
+.click-profit{
+    width: 15em;
+    height: 150px;
+    text-align: center;
+    color:grey;
+    position: absolute;
+    display: inline-block;
+    left: 2em;
+    bottom: 0em;
+    border-top: none;
+}
+.click-profit label{
+	font-size: 2em;
 	border-bottom: 1px solid #f1c40f;
 	color: #f39c12;
 }
-.current-cash a{
-	font-size:3em;
-	font-family: 'Special Elite', cursive;
+.click-profit a{
+	font-size: 2EM;
+	font-family: 'Bungee', cursive;
 	display: inline-block;
 	margin-top: 0.5em;
 	color: #6b5a3f;
