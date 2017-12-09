@@ -1,0 +1,67 @@
+html,body{
+	margin:0;
+	height:100%;
+	background-color: #e4e0e0;
+}
+main{
+	width:100%;
+	height:700px;
+	position: relative;
+}
+.bitcoin-wrapper{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 7em;
+    left: 4em;
+    cursor: pointer;
+}
+.bitcoin-wrapper img{
+    width:	100%;
+    height: 100%;
+}
+.session-info-wrapper{
+	width: 800px;
+	height: 500px;
+	position: absolute;
+	right: 4em;
+	top: 4.5em;
+	background-color: white;
+	border-radius: 8px;
+	box-shadow: 0px 0px 15px 1px #bbaeae;
+}
+.upgrades-wrapper{
+	width: 90%;
+	height: 500px;
+	position: relative;
+	left: 4.5em;
+	border-radius: 3px;
+	box-shadow: 0px 0px 15px 1px #bbaeae;
+	background-color: white;
+}
+/*session info*/
+.click-count{
+    width: 15em;
+    height: 150px;
+    text-align: center;
+    color:grey;
+    position: relative;
+    margin: 2em 2em 2em 4em;
+    display: inline-block;
+}
+.click-count label{
+	font-size: 3em;
+	border-bottom: 1px solid #f1c40f;
+	color: #f39c12;
+}
+.click-count a{
+	font-size:3em;
+	font-family: 'Special Elite', cursive;
+	display: inline-block;
+	margin-top: 0.5em;
+	color: #6b5a3f;
+}
+label{
+	font-family: 'Berkshire Swash', cursive;
+}
+/*end session info*/
