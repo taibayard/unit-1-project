@@ -2,11 +2,12 @@ const coin = document.getElementsByClassName("bitcoin-wrapper")[0];
 const clickCount = document.getElementsByClassName("click-count")[0].getElementsByTagName("a")[0];
 const cashLabel = document.getElementsByClassName("current-cash")[0].getElementsByTagName("a")[0];
 const clickProfitLabel = document.getElementsByClassName("click-profit")[0].getElementsByTagName("a")[0];
+let roundOffset = 3;
 let game = {
     income: {
         cash: 0,
         clickMultiplier: 1,
-        clickWorth: 0.01
+        clickWorth: 0.001
     },
     stats: {
         clicks: 0,

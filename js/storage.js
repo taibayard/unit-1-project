@@ -24,11 +24,11 @@ function setLocalStorage() {
 }
 function handleCashStorage() {
     //handling current cash
-    game.income.cash = parseFloat((game.income.cash).toFixed(2));
+    game.income.cash = parseFloat((game.income.cash).toFixed(roundOffset));
     game.income.cash = storageHandler(game.income.cash, "currentCash");
     cashLabel.innerText = game.income.cash;
     //handles memeory for profit from click history
-    game.stats.cashFromClicks = parseFloat((game.stats.cashFromClicks).toFixed(2));
+    game.stats.cashFromClicks = parseFloat((game.stats.cashFromClicks).toFixed(roundOffset));
     game.stats.cashFromClicks = storageHandler(game.stats.cashFromClicks, "cashFromClicks");
     clickProfitLabel.innerText = game.stats.cashFromClicks;
 }
