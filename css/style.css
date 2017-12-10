@@ -2,6 +2,7 @@ html,body{
 	margin:0;
 	height:100%;
 	background-color: #e4e0e0;
+	user-select: none;
 }
 main{
 	width:100%;
@@ -13,7 +14,7 @@ main{
     height: 400px;
     position: absolute;
     top: 7em;
-    left: 4em;
+    left: 6em;
     cursor: pointer;
 }
 .bitcoin-wrapper img{
@@ -21,10 +22,10 @@ main{
     height: 100%;
 }
 .session-info-wrapper{
-	width: 800px;
+	width: 700px;
 	height: 500px;
 	position: absolute;
-	right: 4em;
+	right: 6em;
 	top: 4.5em;
 	background-color: white;
 	border-radius: 8px;
@@ -33,7 +34,7 @@ main{
 .upgrades-wrapper{
 	width: 90%;
 	height: 500px;
-	position: relative;
+	position: absolute;
 	left: 4.5em;
 	border-radius: 3px;
 	box-shadow: 0px 0px 15px 1px #bbaeae;
@@ -41,7 +42,7 @@ main{
 }
 /*session info*/
 label{
-	font-family: 'Berkshire Swash', cursive;
+	font-family: 'Lilita One', cursive;
 }
 .click-count{
     width: 15em;
@@ -56,7 +57,7 @@ label{
 }
 .click-count label{
 	font-size: 2.7em;
-	border-bottom: 1px solid #f1c40f;
+	border-bottom: 2.5px solid #f39c12;
 	color: #f39c12;
 }
 .click-count a{
@@ -64,7 +65,7 @@ label{
 	font-family: 'Bungee', cursive;
 	display: inline-block;
 	margin-top: 0.5em;
-	color: #6b5a3f;
+	color: #bbbbbb;
 }
 .current-cash{
 	width: 100%;
@@ -73,7 +74,7 @@ label{
 	position: relative;
 	display: inline-block;
 	margin-top: 2em;
-	border-bottom: 1px solid #f39c12;
+	border-bottom: 4px solid #f39c12;
 }
 .current-cash label{
 	font-size: 4.3em;
@@ -99,18 +100,76 @@ label{
 }
 .click-profit label{
 	font-size: 2em;
-	border-bottom: 1px solid #f1c40f;
+	border-bottom: 2.5px solid #f39c12;
 	color: #f39c12;
 }
-.click-profit a{
+.click-profit a, .total-profit a{
 	font-size: 2em;
 	font-family: 'Bungee', cursive;
 	display: inline-block;
 	margin-top: 0.5em;
 	color: #086b08;
 }
-.click-profit a:before {
+.click-profit a:before,.total-profit a:before {
  	color: #f39c12;
  	content: "BTC : ";
 }
+.total-profit{
+    width: 16em;
+    height: 150px;
+    text-align: center;
+    color:grey;
+    position: absolute;
+    display: inline-block;
+    right: 2em;
+    bottom: 0.5em;
+    border-top: none;
+}
+.total-profit label{
+	font-size: 2.5em;
+	border-bottom: 2.5px solid #f39c12;
+	color: #f39c12;
+	display: block;
+}
+
 /*end session info*/
+/*upgrades*/
+.per-click-upgrade{
+    width: 500px;
+    height: 150px;
+    background-color: #929292;
+    position: relative;
+    margin-top: 2em;
+    margin-left: 3em;
+    cursor: pointer;
+    border-radius:3px;
+    box-shadow: 0px 0px 15px 1px #bbaeae;
+}
+.per-click-upgrade label{
+	font-size: 2.7em;
+	color: white;
+	text-shadow: 0px 3px #f39c12bf;
+	position: absolute;
+	right: 0.5em;
+	top: 1.1em;
+}
+.per-click-upgrade a{
+	position: absolute;
+	font-size: 2em;
+	color: white;
+	top: 1.6em;
+	margin-left: .3em;
+	font-family: 'Bungee', cursive;
+}
+.per-click-upgrade a:after{
+	content: " x";
+	font-family: 'Lilita One', cursive;
+}
+.upgrade-cost{
+	font-size: 1.5em !important;
+	position: absolute !important;
+	top: 0.5em!important;
+	color: #ffa310!important;
+	text-shadow: none !important;
+}
+/*end upgrades*/
