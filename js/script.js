@@ -43,12 +43,13 @@ var upgradeClick = function(u, el) {
     console.log("clicked upgrades");
     let upgrade = game.upgrades[u];
     upgrade.total++;
-    upgrade.cost += upgrade.cost * 2.3;
+    upgrade.cost += upgrade.cost * 1.25;
     upgrade.cost = round(upgrade.cost, roundOffset);
     upgrade.value += upgrade.value *0.1;
     upgrade.value = round(upgrade.value,roundOffset + 1);
     el.getElementsByClassName("upgrade-cost")[0].innerText = upgrade.cost;
     el.getElementsByTagName("a")[0].innerText = upgrade.total;
+    el.getElementsByClassName("upgrade-val")[0].innerText = upgrade.value;
     return upgrade;
 }
 

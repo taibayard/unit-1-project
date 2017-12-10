@@ -8,10 +8,10 @@ var storageHandler = function(gameObj, storageObj) {
             localStorage.setItem(storageObj, gameObj);
             break;
         case gameObj < z:
+            localStorage.setItem(storageObj, gameObj);
             return gameObj;
             break;
         default:
-            console.log("error");
             break;
     }
     return gameObj;

@@ -165,11 +165,21 @@ label{
 	content: " x";
 	font-family: 'Lilita One', cursive;
 }
+.upgrade-cost:before{
+	content: "Cost : ";
+	color:white;
+}
 .upgrade-cost{
 	font-size: 1.5em !important;
 	position: absolute !important;
 	top: 0.5em!important;
 	color: #ffa310!important;
 	text-shadow: none !important;
+}
+.upgrade-desc{
+    position: absolute;
+    bottom: 0;
+    margin-left: 4em;
+    color: white;
 }
 /*end upgrades*/
