@@ -53,7 +53,7 @@ var coinClick = function() {
 var upgradeClick = function(u, el, d) {
     let upgrade = game.upgrades[u];
     upgrade.total++;
-    upgrade.cost += upgrade.cost * 1.25;
+    upgrade.cost += upgrade.cost * 1.05;
     upgrade.cost = round(upgrade.cost, roundOffset);
     upgrade.value += upgrade.value * 0.2;
     upgrade.value = round(upgrade.value, roundOffset);
