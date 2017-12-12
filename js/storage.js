@@ -27,6 +27,11 @@ function loadLocalStorage() {
         game.upgrades.perClick.total = parseFloat(localStorage.getItem("perClick_total"));
         game.upgrades.perClick.cost = parseFloat(localStorage.getItem("perClick_cost"));
         game.upgrades.perClick.value = parseFloat(localStorage.getItem("perClick_value"));
+        //loaded click upgrade storage
+        game.upgrades.gpu.total = parseFloat(localStorage.getItem("gpu_total"));
+        game.upgrades.gpu.cost = parseFloat(localStorage.getItem("gpu_cost"));
+        game.upgrades.gpu.value = parseFloat(localStorage.getItem("gpu_value"));
+        //loaded gpu upgrade storage
         game.upgrades.values.perClick = parseFloat(localStorage.getItem("upgradeValue_perClick"));
         game.upgrades.values.gpu = parseFloat(localStorage.getItem("upgradeValue_gpu"));
         console.log("Loaded upgrade storage");
@@ -57,8 +62,8 @@ function handleCashStorage() {
     game.stats.totalCashGenerated = storageHandler(game.stats.totalCashGenerated, "totalEarnedCash");
     totalProfitLabel.innerText = game.stats.cashFromClicks;
     //handles memory for click worth
-    game.income.clickWorth = storageHandler(game.income.clickWorth,"clickWorth");
-    game.income.clickWorth = round(game.income.clickWorth,roundOffset + 1);
+    game.income.clickWorth = storageHandler(game.income.clickWorth, "clickWorth");
+    game.income.clickWorth = round(game.income.clickWorth, roundOffset + 1);
     clickWorthLabel.innerText = game.income.clickWorth;
 }
 
@@ -69,25 +74,38 @@ function handleClickStorage() {
 }
 
 function handleUpgradeStorage() {
-    clickUpgrade();
+    clickUpgradeStorage();
+    gpuUpgradeStorage();
     upgradeValueStorage();
 }
 
-function clickUpgrade() {
+function clickUpgradeStorage() {
     let perclick = game.upgrades.perClick;
     //handles click upgrade memory
     perclick.total = storageHandler(perclick.total, "perClick_total");
     perclick.cost = storageHandler(perclick.cost, "perClick_cost");
     perclick.value = storageHandler(perclick.value, "perClick_value");
     game.upgrades.perClick = perclick;
-    setUpgradeDOM(perClickUpgrade,perclick);
+    setUpgradeDOM(perClickUpgrade, perclick);
 }
-function upgradeValueStorage(){
+
+function gpuUpgradeStorage() {
+    let gpu = game.upgrades.gpu;
+    //handles click upgrade memory
+    gpu.total = storageHandler(gpu.total, "gpu_total");
+    gpu.cost = storageHandler(gpu.cost, "gpu_cost");
+    gpu.value = storageHandler(gpu.value, "gpu_value");
+    game.upgrades.gpu = gpu;
+    setUpgradeDOM(gpuUpgrade, gpu);
+}
+
+function upgradeValueStorage() {
     let rootDir = game.upgrades.values;
-    rootDir.perClick = storageHandler(rootDir.perClick,"upgradeValue_perClick");
-    rootDir.gpu = storageHandler(rootDir.gpu,"upgradeValue_gpu");
+    rootDir.perClick = storageHandler(rootDir.perClick, "upgradeValue_perClick");
+    rootDir.gpu = storageHandler(rootDir.gpu, "upgradeValue_gpu");
 }
-function setUpgradeDOM(e,obj) {
+
+function setUpgradeDOM(e, obj) {
     e.getElementsByClassName("upgrade-cost")[0].innerText = obj.cost;
     e.getElementsByClassName("upgrade-val")[0].innerText = obj.value;
     e.getElementsByTagName("a")[0].innerText = obj.total;

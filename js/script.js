@@ -7,6 +7,7 @@ const totalProfitLabel = document.getElementsByClassName("total-profit")[0].getE
 const clickWorthLabel = document.getElementsByClassName("click-worth")[0].getElementsByTagName("a")[0];
 /*upgrades*/
 const perClickUpgrade = document.getElementsByClassName("per-click-upgrade")[0];
+const gpuUpgrade = document.getElementsByClassName("gpu-upgrade")[0];
 /*game data*/
 let roundOffset = 3;
 let game = {
@@ -21,19 +22,19 @@ let game = {
         totalCashGenerated: 0
     },
     upgrades: {
-    	values:{
-    		perClick:0.001,
-    		gpu:0.050
-    	},
+        values: {
+            perClick: 0,
+            gpu: 0
+        },
         perClick: {
             total: 0,
             cost: 0.005,
             value: 0.001
         },
-        gpu:{
-        	total:0,
-        	cost:1,
-        	value:0.050
+        gpu: {
+            total: 0,
+            cost: 1,
+            value: 0.050
         }
     }
 }
@@ -49,13 +50,13 @@ var coinClick = function() {
     game.stats.clicks++;
     setLocalStorage();
 }
-var upgradeClick = function(u,el,d) {
+var upgradeClick = function(u, el, d) {
     let upgrade = game.upgrades[u];
     upgrade.total++;
     upgrade.cost += upgrade.cost * 1.25;
     upgrade.cost = round(upgrade.cost, roundOffset);
-    upgrade.value += upgrade.value *0.1;
-    upgrade.value = round(upgrade.value,roundOffset + 1);
+    upgrade.value += upgrade.value * 0.1;
+    upgrade.value = round(upgrade.value, roundOffset + 1);
     el.getElementsByClassName("upgrade-cost")[0].innerText = upgrade.cost;
     el.getElementsByTagName("a")[0].innerText = upgrade.total;
     el.getElementsByClassName("upgrade-val")[0].innerText = upgrade.value;
@@ -84,14 +85,23 @@ function addEvents() {
     perClickUpgrade.addEventListener("click", function() {
         let diff = round((game.income.cash - game.upgrades.perClick.cost), roundOffset);
         if (diff >= 0) {
-        	console.log(game.upgrades.perClick);
-            game.upgrades.perClick = upgradeClick("perClick", this,diff);
+            game.upgrades.perClick = upgradeClick("perClick", this, diff);
             game.income.clickWorth += game.upgrades.perClick.value;
             setLocalStorage();
         }
     })
+    gpuUpgrade.addEventListener("click", function() {
+        let diff = round((game.income.cash - game.upgrades.gpu.cost), roundOffset);
+        if (diff >= 0) {
+            game.upgrades.gpu = upgradeClick("gpu", this, diff);
+            setLocalStorage();
+
+        }
+    })
+
 }
 window.onload = function() {
     loadLocalStorage();
     addEvents();
+    addBtc();
 }
