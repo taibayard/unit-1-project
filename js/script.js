@@ -39,8 +39,7 @@ var coinClick = function() {
     game.stats.clicks++;
     setLocalStorage();
 }
-var upgradeClick = function(u, el) {
-    console.log("clicked upgrades");
+var upgradeClick = function(u,el,d) {
     let upgrade = game.upgrades[u];
     upgrade.total++;
     upgrade.cost += upgrade.cost * 1.25;
@@ -50,6 +49,8 @@ var upgradeClick = function(u, el) {
     el.getElementsByClassName("upgrade-cost")[0].innerText = upgrade.cost;
     el.getElementsByTagName("a")[0].innerText = upgrade.total;
     el.getElementsByClassName("upgrade-val")[0].innerText = upgrade.value;
+    game.income.cash = d;
+    cashLabel.innerText = d;
     return upgrade;
 }
 
@@ -70,12 +71,11 @@ function addEvents() {
         resetClickAnimation(this);
     })
     perClickUpgrade.addEventListener("click", function() {
-        let diff = round((game.income.cash - game.upgrades.perClick.cost), roundOffset)
+        let diff = round((game.income.cash - game.upgrades.perClick.cost), roundOffset);
         if (diff >= 0) {
-            game.upgrades.perClick = upgradeClick("perClick", this);
-            game.income.cash = diff;
+        	console.log(game.upgrades.perClick);
+            game.upgrades.perClick = upgradeClick("perClick", this,diff);
             game.income.clickWorth += game.upgrades.perClick.value;
-            console.log(game.upgrades.perClick.value);
             setLocalStorage();
         }
     })
