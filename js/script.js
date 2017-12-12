@@ -53,10 +53,17 @@ var coinClick = function() {
 var upgradeClick = function(u, el, d) {
     let upgrade = game.upgrades[u];
     upgrade.total++;
-    upgrade.cost += upgrade.cost * 1.05;
-    upgrade.cost = round(upgrade.cost, roundOffset);
-    upgrade.value += upgrade.value * 0.2;
-    upgrade.value = round(upgrade.value, roundOffset);
+    if (upgrade.total >= 10) {
+        upgrade.cost += upgrade.cost * 1.05;
+        upgrade.cost = round(upgrade.cost, roundOffset);
+        upgrade.value += upgrade.value * 0.6;
+        upgrade.value = round(upgrade.value, roundOffset);
+    } else {
+        upgrade.cost += upgrade.cost * 1.05;
+        upgrade.cost = round(upgrade.cost, roundOffset);
+        upgrade.value += upgrade.value * 0.2;
+        upgrade.value = round(upgrade.value, roundOffset);
+    }
     el.getElementsByClassName("upgrade-cost")[0].innerText = upgrade.cost;
     el.getElementsByTagName("a")[0].innerText = upgrade.total;
     el.getElementsByClassName("upgrade-val")[0].innerText = upgrade.value;
