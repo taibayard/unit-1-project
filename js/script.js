@@ -9,7 +9,7 @@ const clickWorthLabel = document.getElementsByClassName("click-worth")[0].getEle
 const perClickUpgrade = document.getElementsByClassName("per-click-upgrade")[0];
 const gpuUpgrade = document.getElementsByClassName("gpu-upgrade")[0];
 /*game data*/
-let roundOffset = 3;
+let roundOffset = 4;
 let game = {
     income: {
         cash: 0,
@@ -55,8 +55,8 @@ var upgradeClick = function(u, el, d) {
     upgrade.total++;
     upgrade.cost += upgrade.cost * 1.25;
     upgrade.cost = round(upgrade.cost, roundOffset);
-    upgrade.value += upgrade.value * 0.1;
-    upgrade.value = round(upgrade.value, roundOffset + 1);
+    upgrade.value += upgrade.value * 0.2;
+    upgrade.value = round(upgrade.value, roundOffset);
     el.getElementsByClassName("upgrade-cost")[0].innerText = upgrade.cost;
     el.getElementsByTagName("a")[0].innerText = upgrade.total;
     el.getElementsByClassName("upgrade-val")[0].innerText = upgrade.value;
