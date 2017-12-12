@@ -56,7 +56,7 @@ var upgradeClick = function(u, el, d) {
     if (upgrade.total >= 10) {
         upgrade.cost += upgrade.cost * 1.05;
         upgrade.cost = round(upgrade.cost, roundOffset);
-        upgrade.value += upgrade.value * 0.6;
+        upgrade.value += upgrade.value * 1;
         upgrade.value = round(upgrade.value, roundOffset);
     } else {
         upgrade.cost += upgrade.cost * 1.05;
