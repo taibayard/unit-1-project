@@ -60,7 +60,7 @@ function handleCashStorage() {
     //handles memory for total earned
     game.stats.totalCashGenerated = round(parseFloat(game.stats.totalCashGenerated), roundOffset);
     game.stats.totalCashGenerated = storageHandler(game.stats.totalCashGenerated, "totalEarnedCash");
-    totalProfitLabel.innerText = game.stats.cashFromClicks;
+    totalProfitLabel.innerText = game.stats.totalCashGenerated;
     //handles memory for click worth
     game.income.clickWorth = storageHandler(game.income.clickWorth, "clickWorth");
     game.income.clickWorth = round(game.income.clickWorth, roundOffset);
