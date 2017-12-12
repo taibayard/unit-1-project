@@ -131,7 +131,30 @@ label{
 	color: #f39c12;
 	display: block;
 }
-
+.click-worth{
+	width: 16em;
+	height: 150px;
+	text-align: center;
+	color: #f5aa40;
+	position: absolute;
+	display: inline-block;
+	right: 2em;
+	bottom: 10.8em;
+	border-top: none;
+}
+.click-worth label{
+	font-size: 2.5em;
+	border-bottom: 2.5px solid #f39c12;
+	color: #f39c12;
+	display: block;
+}
+.click-worth a{
+	font-size:3em;
+	font-family: 'Bungee', cursive;
+	display: inline-block;
+	margin-top: 0.5em;
+	color: #086b08;
+}
 /*end session info*/
 /*upgrades*/
 .per-click-upgrade{

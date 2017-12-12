@@ -57,6 +57,7 @@ function handleCashStorage() {
     totalProfitLabel.innerText = game.stats.cashFromClicks;
     //handles memory for click worth
     game.income.clickWorth = storageHandler(game.income.clickWorth,"clickWorth");
+    clickWorthLabel.innerText = game.income.clickWorth;
 }
 
 function handleClickStorage() {

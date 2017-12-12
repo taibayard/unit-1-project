@@ -4,6 +4,7 @@ const clickCount = document.getElementsByClassName("click-count")[0].getElements
 const cashLabel = document.getElementsByClassName("current-cash")[0].getElementsByTagName("a")[0];
 const clickProfitLabel = document.getElementsByClassName("click-profit")[0].getElementsByTagName("a")[0];
 const totalProfitLabel = document.getElementsByClassName("total-profit")[0].getElementsByTagName("a")[0];
+const clickWorthLabel = document.getElementsByClassName("click-worth")[0].getElementsByTagName("a")[0];
 /*upgrades*/
 const perClickUpgrade = document.getElementsByClassName("per-click-upgrade")[0];
 /*game data*/
