@@ -21,15 +21,24 @@ let game = {
         totalCashGenerated: 0
     },
     upgrades: {
+    	values:{
+    		perClick:0.001,
+    		gpu:0.050
+    	},
         perClick: {
             total: 0,
             cost: 0.005,
             value: 0.001
+        },
+        gpu:{
+        	total:0,
+        	cost:1,
+        	value:0.050
         }
     }
 }
 
-function round(value, decimals) {
+var round = function(value, decimals) {
     return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
 }
 
@@ -52,6 +61,7 @@ var upgradeClick = function(u,el,d) {
     el.getElementsByClassName("upgrade-val")[0].innerText = upgrade.value;
     game.income.cash = d;
     cashLabel.innerText = d;
+    game.upgrades.values[u] += upgrade.value;
     return upgrade;
 }
 
